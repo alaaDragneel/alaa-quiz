@@ -15,6 +15,11 @@ class CreateHighscoresTable extends Migration
     {
         Schema::create('highscores', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('chat_id');
+            $table->string('name');
+            $table->integer('points')->default(0);
+            $table->integer('correct_answers')->default(0);
+            $table->integer('tries')->default(0);
             $table->timestamps();
         });
     }
